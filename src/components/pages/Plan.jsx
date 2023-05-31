@@ -1,6 +1,7 @@
 import React from 'react';
 import {useStateContext} from "../../context/StateProvider.jsx";
 import {ToggleSlider} from 'react-toggle-slider';
+import DirectionButton from "../form/DirectionButton.jsx";
 
 
 const Plan = () => {
@@ -78,8 +79,8 @@ const Plan = () => {
             </div>
 
             <div className="form__plan__button-group">
-                <button id="button__go-back" onClick={handleClick}>Go Back</button>
-                <button id="button__continue" onClick={handleClick}>Continue</button>
+                <DirectionButton id={'go-back'} text={'Go Back'}/>
+                <DirectionButton id={'continue'} text={'Continue'}/>
             </div>
 
         </div>
