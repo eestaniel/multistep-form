@@ -3,6 +3,7 @@ import NavigationSummary from "./ui/NavigationSummary.jsx";
 import PersonalInfo from "./pages/PersonalInfo.jsx";
 import Plan from "./pages/Plan.jsx";
 import Addons from "./pages/Addons.jsx";
+import Summary from "./pages/Summary.jsx";
 import {useStateContext} from "../context/StateProvider.jsx";
 
 
@@ -18,6 +19,7 @@ const MultiStepForm = () => {
                 {formPage === 1 && <PersonalInfo formValues={formValues} setFormValues={setFormValues}/>}
                 {formPage === 2 && <Plan />}
                 {formPage === 3 && <Addons />}
+                {formPage === 4 && <Summary />}
             </div>
         );
     }
