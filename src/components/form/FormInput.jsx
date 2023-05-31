@@ -14,7 +14,7 @@ const FormInput = ({id, form_header, type, maxLength, pattern, placeholder, onFo
             <input
                 type={type}
                 id={id}
-                className={`${error !== '' ? 'input-error' : ''}`}
+                className={`${error ? 'input-error' : ''}`}
                 maxLength={maxLength}
                 pattern={pattern}
                 placeholder={placeholder}

@@ -43,17 +43,16 @@
 
 .error::after {
     content: attr(data-error);
-    color: hsl(351, 79%, 66%);
+    color: hsl(350, 55%, 63%);
     position: absolute;
     right: 0;
     top: 0;
     display: block;
 }
 
-.info-container .input-error input{
-    border: 1px solid white;
+.input-error{
+    border: 1px solid hsl(352, 27%, 48%) !important;
     outline: none;
-    margin: 10rem
 }
 
 #form__button {
