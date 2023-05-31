@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import NavigationSummary from "./ui/NavigationSummary.jsx";
 import PersonalInfo from "./pages/PersonalInfo.jsx";
 import Plan from "./pages/Plan.jsx";
+import Addons from "./pages/Addons.jsx";
 import {useStateContext} from "../context/StateProvider.jsx";
 
 
@@ -16,6 +17,7 @@ const MultiStepForm = () => {
                 <NavigationSummary/>
                 {formPage === 1 && <PersonalInfo formValues={formValues} setFormValues={setFormValues}/>}
                 {formPage === 2 && <Plan />}
+                {formPage === 3 && <Addons />}
             </div>
         );
     }
