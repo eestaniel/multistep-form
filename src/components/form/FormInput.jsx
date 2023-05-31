@@ -1,9 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import PropTypes from 'prop-types';
+import {useStateContext} from "../../context/StateProvider.jsx";
 
-const FormInput = ({id, form_header, type, maxLength, pattern, placeholder, value, onChange, onFocus, onBlur, error}) => {
 
+const FormInput = ({id, form_header, type, maxLength, pattern, placeholder, onFocus, onBlur, error}) => {
+    const {formValues, setFormValues} = useStateContext();
     return (
         <>
             <label className={`${error ? 'error' : ''}`}
@@ -18,6 +20,8 @@ const FormInput = ({id, form_header, type, maxLength, pattern, placeholder, valu
                 placeholder={placeholder}
                 onFocus={onFocus}
                 onBlur={onBlur}
+                onChange={e => setFormValues({...formValues, [id]: e.target.value})}
+                value={formValues[id]}
             />
         </>
     );
