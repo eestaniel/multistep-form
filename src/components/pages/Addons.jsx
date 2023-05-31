@@ -5,26 +5,25 @@ import DirectionButton from "../form/DirectionButton.jsx";
 
 const Addons = () => {
     const {planDuration} = useStateContext();
-    const {addonBilling, setAddonBilling} = useStateContext();
+    const {setAddonBilling} = useStateContext();
     const {isChecked, setIsChecked} = useStateContext();
 
-    const testFunction = (e) => {
-        e.preventDefault()
-    }
-
     const handleCheck = (e) => {
-        setIsChecked({...isChecked, [e.target.id]: e.target.checked})
+        const {id, checked} = e.target;
 
-        if (e.target.checked) {
-            setAddonBilling({
-                ...addonBilling, [e.target.id]: {
-                    ...addonBilling[e.target.id], enable: true
-                }
-            })
-        }
+        setIsChecked((prevIsChecked) => ({
+            ...prevIsChecked,
+            [id]: checked
+        }));
 
-
-    }
+        setAddonBilling((prevAddonBilling) => ({
+            ...prevAddonBilling,
+            [id]: {
+                ...prevAddonBilling[id],
+                enable: checked
+            }
+        }));
+    };
 
     return (
         <React.Fragment>
