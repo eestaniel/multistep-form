@@ -41,10 +41,6 @@ const Plan = () => {
         }
     }
 
-    const test = () => {
-        console.log(plan);
-    }
-
 
     return (
         <div className={'plan-container'}>
@@ -108,7 +104,6 @@ const Plan = () => {
             <div className="form__plan__button-group">
                 <DirectionButton id={'go-back'} text={'Go Back'}/>
                 <DirectionButton id={'continue'} text={'Continue'}/>
-                <button onClick={test}>Test</button>
             </div>
 
         </div>
