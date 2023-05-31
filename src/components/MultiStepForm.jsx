@@ -4,6 +4,7 @@ import PersonalInfo from "./pages/PersonalInfo.jsx";
 import Plan from "./pages/Plan.jsx";
 import Addons from "./pages/Addons.jsx";
 import Summary from "./pages/Summary.jsx";
+import Complete from "./pages/Complete.jsx";
 import {useStateContext} from "../context/StateProvider.jsx";
 
 
@@ -20,6 +21,7 @@ const MultiStepForm = () => {
                 {formPage === 2 && <Plan />}
                 {formPage === 3 && <Addons />}
                 {formPage === 4 && <Summary />}
+                {formPage === 5 && <Complete />}
             </div>
         );
     }
