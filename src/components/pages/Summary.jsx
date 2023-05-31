@@ -3,7 +3,7 @@ import {useStateContext} from "../../context/StateProvider.jsx";
 import DirectionButton from "../form/DirectionButton.jsx";
 
 const Summary = () => {
-    const {formPage, setFormPage} = useStateContext();
+    const {setFormPage} = useStateContext();
     const {plan} = useStateContext();
     const {planDuration} = useStateContext();
     const {addonBilling} = useStateContext();
