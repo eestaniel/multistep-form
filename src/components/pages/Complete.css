@@ -1,0 +1,30 @@
+.complete-container {
+    position: relative;
+    display: grid;
+    place-self: center;
+    text-align: center;
+    width: 92%;
+    background-color: white;
+    transform: translateY(-4rem);
+    border-radius: 0.5rem;
+    padding: 4rem 1.425rem;
+}
+
+.complete__icon {
+    background-image: url("../../assets/images/icon-thank-you.svg");
+    width: 3.625rem;
+    background-repeat: no-repeat;
+    aspect-ratio: 1 / 1;
+    background-size: contain;
+    margin: 0 auto 1rem auto;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: hsl(213, 98%, 16%);
+}
+
+p {
+    font-size: 1.125rem;
+    color: hsl(230, 3%, 61%);
+}
