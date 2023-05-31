@@ -1,0 +1,29 @@
+body {
+    height: 100vh;
+    background-color: gray;
+    display: grid;
+    place-items: center;
+}
+
+.form-container {
+    background-color: white;
+    display: grid;
+}
+
+
+.error {
+
+}
+
+
+.error::after {
+    content: attr(data-error);
+    color: red;
+}
+
+ .input-error {
+    border: 1px solid red;
+    outline: none;
+}
+
+
