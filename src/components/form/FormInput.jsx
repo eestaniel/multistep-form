@@ -8,13 +8,13 @@ const FormInput = ({id, form_header, type, maxLength, pattern, placeholder, onFo
     const {formValues, setFormValues} = useStateContext();
     return (
         <>
-            <label className={`${error ? 'error' : ''}`}
+            <label className={`form__input-header ${error ? 'error' : ''}`}
                    data-error={error}
             > {form_header} </label>
             <input
                 type={type}
                 id={id}
-                className={`${error ? 'input-error' : ''}`}
+                className={`${error !== '' ? 'input-error' : ''}`}
                 maxLength={maxLength}
                 pattern={pattern}
                 placeholder={placeholder}

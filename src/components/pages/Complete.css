@@ -19,12 +19,12 @@
     margin: 0 auto 1rem auto;
 }
 
-h1 {
+.complete-container h1 {
     font-size: 1.5rem;
     color: hsl(213, 98%, 16%);
 }
 
-p {
+.complete-container p {
     font-size: 1.125rem;
     color: hsl(230, 3%, 61%);
 }

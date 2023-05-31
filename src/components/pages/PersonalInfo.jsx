@@ -2,6 +2,7 @@ import React from 'react';
 import Form from "../form/Form.jsx";
 import Validate from "../../utils/Validate.jsx";
 import { useStateContext } from "../../context/StateProvider.jsx";
+import './PersonalInfo.css'
 
 const PersonalInfo = () => {
 
@@ -42,7 +43,6 @@ const PersonalInfo = () => {
                 errors={errors}
             />
             <button id="form__button" onClick={handleSubmit}>Next Step</button>
-
         </div>
     );
 };

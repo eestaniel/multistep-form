@@ -13,16 +13,20 @@ const MultiStepForm = () => {
         const {formValues, setFormValues} = useStateContext();
 
 
-
         return (
-            <div className={'form-container'}>
-                <NavigationSummary/>
-                {formPage === 1 && <PersonalInfo formValues={formValues} setFormValues={setFormValues}/>}
-                {formPage === 2 && <Plan />}
-                {formPage === 3 && <Addons />}
-                {formPage === 4 && <Summary />}
-                {formPage === 5 && <Complete />}
-            </div>
+            <>
+                <div className={'form-container'}>
+                    <NavigationSummary/>
+                    {formPage === 1 && <PersonalInfo formValues={formValues} setFormValues={setFormValues}/>}
+                    {formPage === 2 && <Plan/>}
+                    {formPage === 3 && <Addons/>}
+                    {formPage === 4 && <Summary/>}
+                    {formPage === 5 && <Complete/>}
+                </div>
+                <div className="background__border"></div>
+            </>
+
+
         );
     }
 ;
