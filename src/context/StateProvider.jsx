@@ -16,7 +16,26 @@ export function StateProvider({children}) {
     });
 
     // Form page state
-    const [formPage, setFormPage] = useState(3);
+    const [formPage, setFormPage] = useState(2);
+
+    // Plan state
+    const [plan, setPlan] = useState({
+        'arcade': {
+            enable: false,
+            monthly: 9,
+            yearly: 90,
+        },
+        'advanced': {
+            enable: false,
+            monthly: 12,
+            yearly: 120,
+        } ,
+        'pro': {
+            enable: false,
+            monthly: 15,
+            yearly: 150,
+        }
+    })
 
     // Plan duration state
     const [planDuration, setPlanDuration] = useState('monthly');
@@ -24,7 +43,7 @@ export function StateProvider({children}) {
     // Toggle state for radio button in Plan.jsx
     const [toggleStateDuration, setToggleStateDuration] = useState(false);
 
-    // Addon billing object
+    // Addon billing state
     const [addonBilling, setAddonBilling] = useState({
         'online-service': {
             enable: false,
@@ -54,6 +73,7 @@ export function StateProvider({children}) {
         <StateContext.Provider value={{
             formValues, setFormValues,
             formPage, setFormPage,
+            plan, setPlan,
             planDuration, setPlanDuration,
             toggleStateDuration, setToggleStateDuration,
             addonBilling, setAddonBilling,

@@ -5,16 +5,29 @@ import DirectionButton from "../form/DirectionButton.jsx";
 
 
 const Plan = () => {
+    const {plan, setPlan} = useStateContext();
     const {planDuration, setPlanDuration} = useStateContext();
-    const {setFormPage} = useStateContext();
     const {toggleStateDuration, setToggleStateDuration} = useStateContext();
 
-    const handleClick = (e) => {
-        e.preventDefault()
-        if (e.target.id === 'button__go-back') {
-            setFormPage(1);
-        } else if (e.target.id === 'button__continue') {
-            setFormPage(3);
+    const handlePlanSelection = (e) => {
+        e.preventDefault();
+        // enable the plan that was clicked
+        setPlan({
+            ...plan, [e.currentTarget.id]: {
+                ...plan[e.currentTarget.id], enable: true
+            }
+        })
+        // disable the other plans
+        for (let key in plan) {
+            if (key !== e.currentTarget.id) {
+                setPlan(prevPlan => ({
+                    ...prevPlan,
+                    [key]: {
+                        ...prevPlan[key],
+                        enable: false
+                    }
+                }));
+            }
         }
     }
 
@@ -28,6 +41,10 @@ const Plan = () => {
         }
     }
 
+    const test = () => {
+        console.log(plan);
+    }
+
 
     return (
         <div className={'plan-container'}>
@@ -35,7 +52,11 @@ const Plan = () => {
             <h2 className="form__subheader">You have the option of monthly or yearly billing.</h2>
 
             <div className="form__group-plan">
-                <div className="form__group-plan__item">
+                <div
+                    className="form__group-plan__item"
+                    id={'arcade'}
+                    onClick={handlePlanSelection}
+                >
                     <h3 className="form__group-plan__item__header">Arcade</h3>
                     {planDuration === 'monthly' ?
                         <p className="form__group-plan__item__price">$9/mo</p>
@@ -46,7 +67,10 @@ const Plan = () => {
                         </>
                     }
                 </div>
-                <div className="form__group-plan__item">
+                <div className="form__group-plan__item"
+                     id={'advanced'}
+                     onClick={handlePlanSelection}
+                >
                     <h3 className="form__group-plan__item__header">Advanced</h3>
                     {planDuration === 'monthly' ?
                         <p className="form__group-plan__item__price">$12/mo</p>
@@ -57,7 +81,10 @@ const Plan = () => {
                         </>
                     }
                 </div>
-                <div className="form__group-plan__item">
+                <div className="form__group-plan__item"
+                     id={'pro'}
+                     onClick={handlePlanSelection}
+                >
                     <h3 className="form__group-plan__item__header">Pro</h3>
                     {planDuration === 'monthly' ?
                         <p className="form__group-plan__item__price">$15/mo</p>
@@ -81,6 +108,7 @@ const Plan = () => {
             <div className="form__plan__button-group">
                 <DirectionButton id={'go-back'} text={'Go Back'}/>
                 <DirectionButton id={'continue'} text={'Continue'}/>
+                <button onClick={test}>Test</button>
             </div>
 
         </div>
