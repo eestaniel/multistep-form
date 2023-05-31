@@ -1,0 +1,50 @@
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+.form__navigation {
+    background-image: url("../../assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 17vh;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.form__navigation__list {
+    list-style-type: none;
+    counter-reset: section-counter;
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    grid-gap: 2rem;
+    place-content: center;
+    margin-top: 1rem;
+}
+
+.form__navigation__list h2,
+.form__navigation__list p {
+    display: none;
+}
+
+.form__navigation__list__item {
+    display: grid;
+    place-content: center;
+
+    height: 2rem;
+    width: 2rem;
+    aspect-ratio: 1 / 1;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+
+.currentPage {
+    background-color: white;
+    color: black;
+}
+
