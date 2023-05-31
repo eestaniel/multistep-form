@@ -7,6 +7,7 @@ const PersonalInfo = () => {
 
     const [errors, setErrors] = React.useState({})
     const { formValues, setFormValues } = useStateContext();
+    const {setFormPage} = useStateContext();
 
 
     const handleFocus = (e) => {
@@ -24,6 +25,9 @@ const PersonalInfo = () => {
         e.preventDefault()
         let formErrors = Validate(formValues)
         setErrors(formErrors)
+        if (Object.keys(formErrors).length === 0) {
+            setFormPage(2)
+        }
     }
 
 
