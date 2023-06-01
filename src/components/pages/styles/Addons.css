@@ -1,0 +1,74 @@
+.addon-container {
+    display: grid;
+    place-self: center;
+    text-align: left;
+    width: 92%;
+    height: 100%;
+    background-color: white;
+    transform: translateY(-4.635rem);
+    border-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+    color: hsl(215, 93%, 17%);
+}
+
+.addon__header {
+    font-size: 1.5rem;
+}
+
+.addon__subheader {
+    font-size: 1.125rem;
+    color: hsl(230, 7%, 84%);
+}
+
+.addon__group-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: start;
+    gap: .75rem;
+    margin-top: 1rem;
+}
+
+
+
+.addon__group__item {
+    gap: 1rem;
+    border: 1px solid hsl(240, 3%, 86%);
+    padding: 0.75rem 1.25rem;
+    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.25fr 5fr 1fr;
+}
+
+.addon__group__item:hover {
+    cursor: pointer;
+    border-color: hsl(244, 19%, 48%);
+}
+
+.addon__group__item--active {
+    border-color: hsl(244, 19%, 48%) !important;
+}
+
+.addon__group__item input {
+    scale: 150%;
+}
+
+.addon-container input[type='checkbox'] {
+    accent-color: hsl(244, 100%, 62%);
+}
+
+.addon__group__item__subgroup {
+    line-height: 1.1;
+    margin-left: 0.25rem;
+}
+
+.addon__group__item__subgroup h3 {
+    font-size: 1rem;
+}
+
+.addon__group__item__subgroup p {
+    font-size: 0.835rem;
+    color: hsl(240, 5%, 68%);
+}
+
+
