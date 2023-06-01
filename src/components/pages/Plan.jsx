@@ -55,7 +55,7 @@ const Plan = () => {
                     id={'arcade'}
                     onClick={handlePlanSelection}
                 >
-                    <img src={'/src/assets/images/icon-arcade.svg'} alt={'arcade-icon'}/>
+                    <img src={'./multistep-form/src/assets/images/icon-arcade.svg'} alt={'arcade-icon'}/>
                     <div className="form__group-sub-group">
                         <h3 className="form__group-plan__item__header">Arcade</h3>
                         {planDuration === 'monthly' ?
@@ -73,7 +73,7 @@ const Plan = () => {
                      id={'advanced'}
                      onClick={handlePlanSelection}
                 >
-                    <img src={'/src/assets/images/icon-advanced.svg'} alt={'advanced-icon'}/>
+                    <img src={'./multistep-form/src/assets/images/icon-advanced.svg'} alt={'advanced-icon'}/>
                     <div className="form__group-sub-group">
                         <h3 className="form__group-plan__item__header">Advanced</h3>
                         {planDuration === 'monthly' ?
@@ -92,7 +92,7 @@ const Plan = () => {
                     id={'pro'}
                     onClick={handlePlanSelection}
                 >
-                    <img src={'/src/assets/images/icon-pro.svg'} alt={'pro-icon'}/>
+                    <img src={'./multistep-form/src/assets/images/icon-pro.svg'} alt={'pro-icon'}/>
                     <div className="form__group-sub-group">
                         <h3 className="form__group-plan__item__header">Pro</h3>
                         {planDuration === 'monthly' ?
