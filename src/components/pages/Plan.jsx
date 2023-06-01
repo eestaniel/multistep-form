@@ -108,11 +108,11 @@ const Plan = () => {
 
             </div>
 
-            <div className="form__plan__duration-group">
-                <ToggleSlider
+      <div className={`form__plan__duration-group ${planDuration === 'yearly' ? 'yearly' : 'monthly'}`}>                <ToggleSlider
                     classname={'form__plan__toggle'}
                     onToggle={handleToggle}
                     active={toggleStateDuration}
+                    draggable={false}
                 />
             </div>
 

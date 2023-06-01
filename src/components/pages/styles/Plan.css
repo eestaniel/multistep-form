@@ -73,9 +73,70 @@
 }
 
 .form__plan__duration-group::before {
-    content: 'Monthly'
+    content: 'Monthly';
+    color: hsl(240, 6%, 70%);
 }
 
 .form__plan__duration-group::After {
-    content: 'Yearly'
+    content: 'Yearly';
+    color: hsl(240, 6%, 70%);
+}
+
+.form__plan__duration-group.monthly::before {
+    color: hsl(216, 42%, 18%);
+}
+
+.form__plan__duration-group.yearly::after {
+    color: hsl(216, 42%, 18%);
+}
+
+@media (min-width: 768px) {
+    .plan-container {
+        max-width: 450px;
+        width: 100%;
+        place-content: center;
+        transform: translateY(-5.25rem);
+        background-color: transparent;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .form__header {
+        font-size: 2rem;
+        color: hsl(213, 100%, 16%);
+    }
+
+    .form__group-plan {
+        display: grid;
+        grid-template-columns: repeat(3, 136px);
+        grid-template-rows: 1fr;
+        grid-gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .form__group-plan__item {
+        border: 1px solid hsl(240, 3%, 86%);
+        position: relative;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2.125rem;
+    }
+
+    .form__plan__duration-group {
+        display: grid;
+        place-content: center;
+        gap: 1.75rem;
+        margin-top: 2rem;
+        grid-template-columns: repeat(3, min-content);
+        background-color: hsl(230, 75%, 98%);
+        padding: .75rem;
+        border-radius: .25rem;
+    }
+
+    .form__group-plan__item__discount {
+        font-size: 0.875rem;
+    }
 }
