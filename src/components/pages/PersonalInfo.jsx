@@ -24,7 +24,7 @@ const PersonalInfo = () => {
 
 
     return (
-        <div className={'info-container'}>
+        <div className={'info-container main-container'}>
             <h1 className="info__header">Personal info</h1>
             <p className="info__paragraph">Please provide your name, email address, and phone number.</p>
             <Form
