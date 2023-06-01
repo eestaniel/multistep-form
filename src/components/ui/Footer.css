@@ -93,4 +93,8 @@
         left: 48rem;
         right: revert;
     }
+
+    .button__confirm {
+        background-color: hsl(243, 100%, 62%) !important;
+    }
 }
