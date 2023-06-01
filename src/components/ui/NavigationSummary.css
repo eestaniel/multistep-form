@@ -120,6 +120,8 @@ ul, li {
 
     .form__navigation__list__item__paragraph {
         font-family: Ubuntu-bold, sans-serif;
+        font-weight: bold;
+        color: hsl(225, 100%, 98%);
     }
 
 
