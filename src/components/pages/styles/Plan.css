@@ -57,11 +57,6 @@
     border-color: hsl(244, 19%, 48%) !important;
 }
 
-.form__group-plan__item img {
-    aspect-ratio: 1 / 1;
-    width: 2.625rem;
-}
-
 .form__group-plan__item--selected {
     border: 1px solid hsl(244, 19%, 48%) !important;
 }
@@ -94,6 +89,36 @@
 .form__plan__duration-group.yearly::after {
     content: 'Yearly';
     color: hsl(216, 42%, 18%);
+}
+
+.form__icon[datatype='arcade'] {
+    content: "";
+    width: 2.625rem;
+    aspect-ratio: 1 / 1;
+    background-image: url("../../../assets/images/icon-arcade.svg");
+    background-repeat: no-repeat;
+}
+
+.form__icon[datatype='advanced'] {
+    content: "";
+    width: 2.625rem;
+    aspect-ratio: 1 / 1;
+    background-image: url("../../../assets/images/icon-advanced.svg");
+    background-repeat: no-repeat;
+}
+
+.form__icon[datatype='pro'] {
+    content: "";
+    width: 2.625rem;
+    aspect-ratio: 1 / 1;
+    background-image: url("../../../assets/images/icon-pro.svg");
+    background-repeat: no-repeat;
+}
+
+.form__icon {
+    display: grid;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 @media (min-width: 768px) {
