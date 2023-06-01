@@ -23,7 +23,7 @@ const MultiStepForm = () => {
                     {formPage === 4 && <Summary/>}
                     {formPage === 5 && <Complete/>}
                 </div>
-                <div className="background__border"></div>
+
             </>
 
 

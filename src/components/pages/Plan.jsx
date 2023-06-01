@@ -1,16 +1,19 @@
 import React from 'react';
 import {useStateContext} from "../../context/StateProvider.jsx";
 import {ToggleSlider} from 'react-toggle-slider';
-import DirectionButton from "../form/DirectionButton.jsx";
-
+import './Plan.css';
 
 const Plan = () => {
     const {plan, setPlan} = useStateContext();
     const {planDuration, setPlanDuration} = useStateContext();
     const {toggleStateDuration, setToggleStateDuration} = useStateContext();
+    const {selectedPlan, setSelectedPlan} = useStateContext();
+
 
     const handlePlanSelection = (e) => {
         e.preventDefault();
+        console.log(e.currentTarget.id)
+        setSelectedPlan(e.currentTarget.id);
         // enable the plan that was clicked
         setPlan({
             ...plan, [e.currentTarget.id]: {
@@ -49,48 +52,61 @@ const Plan = () => {
 
             <div className="form__group-plan">
                 <div
-                    className="form__group-plan__item"
+                    className={`form__group-plan__item ${selectedPlan === 'arcade' ? 'form__group-plan__item--selected' : ''}`}
                     id={'arcade'}
                     onClick={handlePlanSelection}
                 >
-                    <h3 className="form__group-plan__item__header">Arcade</h3>
-                    {planDuration === 'monthly' ?
-                        <p className="form__group-plan__item__price">$9/mo</p>
-                        :
-                        <>
-                            <p className="form__group-plan__item__price">$90/yr</p>
-                            <p className="form__group-plan__item__discount">2 months free</p>
-                        </>
-                    }
+                    <img src={'src/assets/images/icon-arcade.svg'} alt={'arcade-icon'}/>
+                    <div className="form__group-sub-group">
+                        <h3 className="form__group-plan__item__header">Arcade</h3>
+                        {planDuration === 'monthly' ?
+                            <p className="form__group-plan__item__price">$9/mo</p>
+                            :
+                            <>
+                                <p className="form__group-plan__item__price">$90/yr</p>
+                                <p className="form__group-plan__item__discount">2 months free</p>
+                            </>
+                        }
+                    </div>
                 </div>
-                <div className="form__group-plan__item"
+                <div
+                    className={`form__group-plan__item ${selectedPlan === 'advanced' ? 'form__group-plan__item--selected' : ''}`}
                      id={'advanced'}
                      onClick={handlePlanSelection}
                 >
-                    <h3 className="form__group-plan__item__header">Advanced</h3>
-                    {planDuration === 'monthly' ?
-                        <p className="form__group-plan__item__price">$12/mo</p>
-                        :
-                        <>
-                            <p className="form__group-plan__item__price">$120/yr</p>
-                            <p className="form__group-plan__item__discount">2 months free</p>
-                        </>
-                    }
+                    <img src={'src/assets/images/icon-advanced.svg'} alt={'arcade-icon'}/>
+                    <div className="form__group-sub-group">
+                        <h3 className="form__group-plan__item__header">Advanced</h3>
+                        {planDuration === 'monthly' ?
+                            <p className="form__group-plan__item__price">$12/mo</p>
+                            :
+                            <>
+                                <p className="form__group-plan__item__price">$120/yr</p>
+                                <p className="form__group-plan__item__discount">2 months free</p>
+                            </>
+                        }
+                    </div>
+
                 </div>
-                <div className="form__group-plan__item"
-                     id={'pro'}
-                     onClick={handlePlanSelection}
+                <div
+                    className={`form__group-plan__item ${selectedPlan === 'pro' ? 'form__group-plan__item--selected' : ''}`}
+                    id={'pro'}
+                    onClick={handlePlanSelection}
                 >
-                    <h3 className="form__group-plan__item__header">Pro</h3>
-                    {planDuration === 'monthly' ?
-                        <p className="form__group-plan__item__price">$15/mo</p>
-                        :
-                        <>
-                            <p className="form__group-plan__item__price">$150/yr</p>
-                            <p className="form__group-plan__item__discount">2 months free</p>
-                        </>
-                    }
+                    <img src={'src/assets/images/icon-pro.svg'} alt={'arcade-icon'}/>
+                    <div className="form__group-sub-group">
+                        <h3 className="form__group-plan__item__header">Pro</h3>
+                        {planDuration === 'monthly' ?
+                            <p className="form__group-plan__item__price">$15/mo</p>
+                            :
+                            <>
+                                <p className="form__group-plan__item__price">$150/yr</p>
+                                <p className="form__group-plan__item__discount">2 months free</p>
+                            </>
+                        }
+                    </div>
                 </div>
+
             </div>
 
             <div className="form__plan__duration-group">
@@ -101,10 +117,6 @@ const Plan = () => {
                 />
             </div>
 
-            <div className="form__plan__button-group">
-                <DirectionButton id={'go-back'} text={'Go Back'}/>
-                <DirectionButton id={'continue'} text={'Continue'}/>
-            </div>
 
         </div>
     );

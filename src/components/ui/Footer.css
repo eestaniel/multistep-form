@@ -1,0 +1,56 @@
+.footer {
+
+    background-color: white;
+    position: sticky;
+    display: grid;
+    bottom: 0;
+    margin-top: auto;
+
+}
+
+.form__plan__button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem
+
+
+}
+
+.form__plan__button-group button {
+    width:  25vw;
+    height: 5vh;
+    display: grid;
+    place-items: center;
+}
+
+#go-back {
+    justify-self: start;
+    border-color: white;
+}
+
+#button__go-back {
+    border: none;
+    background-color: white;
+    color: hsl(248, 5%, 71%);
+}
+
+#button__continue {
+    background-color: hsl(214, 94%, 18%);
+    color: white;
+    border: none;
+    border-radius: .25rem;
+}
+
+.button__solo {
+    position: relative;
+    right: -67vw
+
+
+}
+
+
+.button__hidden {
+    display: none !important;
+}
+
