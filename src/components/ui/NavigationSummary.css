@@ -8,10 +8,8 @@ ul, li {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 17vh;
+    height: 25vh;
     display: grid;
-    place-items: center;
-    margin: 0;
     padding: 0;
 }
 
@@ -21,9 +19,8 @@ ul, li {
     counter-reset: section-counter;
     display: grid;
     grid-template-columns: repeat(4, min-content);
-    grid-gap: 2rem;
+    grid-gap: 1.5rem;
     place-content: center;
-    margin-top: 1rem;
 }
 
 .form__navigation__list h2,
@@ -31,20 +28,96 @@ ul, li {
     display: none;
 }
 
-.form__navigation__list__item {
+.form__number {
     display: grid;
     place-content: center;
-
     height: 2rem;
     width: 2rem;
     aspect-ratio: 1 / 1;
     border: 1px solid white;
     border-radius: 100%;
+    color: white;
+    position: relative;
+    transform: translatey(-2rem);
 }
 
 
 .currentPage {
-    background-color: white;
+    background-color: hsl(206, 94%, 86%);
+    border-color: hsl(206, 94%, 86%);
     color: black;
+}
+
+@media (min-width: 768px) {
+    .form__navigation {
+        background: url("../../assets/images/bg-sidebar-desktop.svg") no-repeat;
+        display: grid;
+        grid-area: navigation;
+        background-size: cover;
+        max-width: 272px;
+        width: 272px;
+        max-height: 568px;
+        height: 100%;
+        border-radius: 0.5rem;
+        padding: 2rem;
+    }
+
+    .form__navigation__list {
+        grid-template-columns: 1fr; /* Update this */
+        grid-template-rows: repeat(4, min-content); /* Add this */
+        place-items: center;
+        place-content: start;
+        color: hsl(246, 100%, 93%);
+    }
+
+    .form__navigation__list h2,
+    .form__navigation__list p {
+        display: block;
+    }
+
+    .form__navigation__list h2 {
+        font-size: .835rem;
+        color: hsl(240, 100%, 84%);
+    }
+
+    .form__navigation__list__item {
+        display: flex;
+        max-width: 200px;
+        width: 100%;
+        border-radius: 1rem;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .form__navigation__list__item__header {
+        font-size: 1rem;
+    }
+
+    .form_navigation-group {
+        display: grid;
+        place-content: center;
+
+    }
+
+    .form__number {
+        display: grid;
+        place-content: center;
+        height: 2rem;
+        width: 2rem;
+        aspect-ratio: 1 / 1;
+        border: 1px solid white;
+        border-radius: 100%;
+        color: white;
+        position: relative;
+        transform: none;
+    }
+
+    .currentPage {
+        background-color: hsl(206, 94%, 86%);
+        border-color: hsl(206, 94%, 86%);
+        color: black;
+    }
+
+
 }
 

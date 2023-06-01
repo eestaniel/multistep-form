@@ -10,31 +10,42 @@ const NavigationSummary = () => {
         <div className={'form__navigation'}>
             <ul className="form__navigation__list">
 
-                <li className={`form__navigation__list__item ${formPage === 1 ? 'currentPage' : ''}`}>
-                    <div className="form__number">1</div>
-                    <h2 className="form__navigation__list__item__header">STEP 1</h2>
-                    <p className="form__navigation__list__item__paragraph">YOUR INFO</p>
+                <li className={`form__navigation__list__item `}>
+                    <div className={`form__number ${formPage === 1 ? 'currentPage' : ''}`}>1</div>
+                    <div className="form_navigation-group">
+                        <h2 className="form__navigation__list__item__header">STEP 1</h2>
+                        <p className="form__navigation__list__item__paragraph">YOUR INFO</p>
+                    </div>
+
                 </li>
 
-                <li className={`form__navigation__list__item ${formPage === 2 ? 'currentPage' : ''}`}>
-                    <div className="form__number">2</div>
+                <li className={`form__navigation__list__item`}>
+                    <div className={`form__number ${formPage === 2 ? 'currentPage' : ''}`}>2</div>
+                    <div className="form_navigation-group">
+                        <h2 className="form__navigation__list__item__header">STEP 2</h2>
+                        <p className="form__navigation__list__item__paragraph">SELECT PLAN</p>
+                    </div>
 
-                    <h2 className="form__navigation__list__item__header">STEP 2</h2>
-                    <p className="form__navigation__list__item__paragraph">SELECT PLAN</p>
+
                 </li>
 
-                <li className={`form__navigation__list__item ${formPage === 3 ? 'currentPage' : ''}`}>
-                    <div className="form__number">3</div>
-
-                    <h2 className="form__navigation__list__item__header">STEP 3</h2>
+                <li className={`form__navigation__list__item `}>
+                    <div className={`form__number ${formPage === 3 ? 'currentPage' : ''}`}>3</div>
+                    <div className="form_navigation-group">
+                        <h2 className="form__navigation__list__item__header">STEP 3</h2>
                     <p className="form__navigation__list__item__paragraph">ADD-ONS</p>
+                    </div>
+
+
                 </li>
 
-                <li className={`form__navigation__list__item ${formPage >= 4 ? 'currentPage' : ''}`}>
-                    <div className="form__number">4</div>
+                <li className={`form__navigation__list__item`}>
+                    <div className={`form__number ${formPage >= 4 ? 'currentPage' : ''}`}>4</div>
+                    <div className="form_navigation-group">
+                        <h2 className="form__navigation__list__item__header">STEP 4</h2>
+                        <p className="form__navigation__list__item__paragraph">SUMMARY</p>
+                    </div>
 
-                    <h2 className="form__navigation__list__item__header">STEP 4</h2>
-                    <p className="form__navigation__list__item__paragraph">SUMMARY</p>
                 </li>
 
             </ul>
