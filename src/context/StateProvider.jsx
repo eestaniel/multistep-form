@@ -1,4 +1,4 @@
-import React, {useState, useContext, useRef} from 'react';
+import React, {useState, useContext} from 'react';
 import PropTypes from 'prop-types';
 
 const StateContext = React.createContext();
@@ -16,7 +16,12 @@ export function StateProvider({children}) {
     });
 
     // Form page state
-    const [formPage, setFormPage] = useState(2);
+    const [formPage, setFormPage] = useState(1);
+
+    const [errors, setErrors] = React.useState({})
+
+
+    const [selectedPlan, setSelectedPlan] = useState('');
 
     // Plan state
     const [plan, setPlan] = useState({
@@ -29,7 +34,7 @@ export function StateProvider({children}) {
             enable: false,
             monthly: 12,
             yearly: 120,
-        } ,
+        },
         'pro': {
             enable: false,
             monthly: 15,
@@ -49,12 +54,12 @@ export function StateProvider({children}) {
             enable: false,
             monthly: 1,
             yearly: 10,
-        } ,
+        },
         'larger-storage': {
             enable: false,
             monthly: 2,
             yearly: 20,
-        } ,
+        },
         'customizable-profile': {
             enable: false,
             monthly: 2,
@@ -63,16 +68,18 @@ export function StateProvider({children}) {
     })
 
     const [isChecked, setIsChecked] = useState({
-        'online-service' : false,
-        'larger-storage' : false,
-        'customizable-profile' : false,
+        'online-service': false,
+        'larger-storage': false,
+        'customizable-profile': false,
     })
 
 
     return (
         <StateContext.Provider value={{
             formValues, setFormValues,
+            errors, setErrors,
             formPage, setFormPage,
+            selectedPlan, setSelectedPlan,
             plan, setPlan,
             planDuration, setPlanDuration,
             toggleStateDuration, setToggleStateDuration,
