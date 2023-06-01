@@ -4,19 +4,33 @@ import PropTypes from 'prop-types';
 import {useStateContext} from "../../context/StateProvider.jsx";
 import Validate from "../../utils/Validate.jsx";
 
+
 const DirectionButton = ({id, text}) => {
     const {formPage, setFormPage} = useStateContext();
     const {setErrors} = useStateContext();
     const {formValues} = useStateContext();
+    const {plan} = useStateContext();
 
 
     const handleClick = (e) => {
         // navigate forward or backward based on button id
         e.preventDefault()
 
-        if (e.target.id === 'button__go-back') {
+        if (formPage === 2 && id === 'continue') {
+            let valid = false;
+            for (let key in plan) {
+                if (plan[key].enable === true) {
+                    valid = true;
+                }
+            }
+            if (valid) {
+                setFormPage((prevPage) => prevPage + 1);
+            } else {
+                alert('Please select a plan');
+            }
+        } else if (id === 'go-back') {
             setFormPage((prevPage) => prevPage - 1);
-        } else if (e.target.id === 'button__continue') {
+        } else if (id === 'continue') {
             setFormPage((prevPage) => prevPage + 1);
         }
     }
@@ -36,14 +50,20 @@ const DirectionButton = ({id, text}) => {
             id={`button__${id}`}
             className={`button__${
                 formPage === 1 && id === 'go-back' ? 'hidden' :
-                    formPage === 1 && id === 'continue' ? 'solo' : ''
+                    formPage === 1 && id === 'continue' ? 'solo' : 
+                        formPage === 4 && id === 'continue' ? 'confirm' : 
+                            formPage === 5 && id === 'go-back' ? 'hidden' : 
+                                formPage === 5 && id === 'continue' ? 'hidden' : ''
             }`}
             onClick={
                 formPage === 1 && id === 'continue' ? handleValidate : handleClick
             }
         >
-            {text}
+            {
+                formPage === 4 && id === 'continue' ? 'Confirm' : text
+            }
         </button>
+
     );
 };
 
