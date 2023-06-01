@@ -9,8 +9,7 @@ const Footer = () => {
             <div className="footer">
                 <div className="form__plan__button-group">
                     <DirectionButton id={'go-back'} text={'Go back'}/>
-                    <DirectionButton id={'continue'} text={'Continue'}/>
-
+                    <DirectionButton id={'continue'} text={'Next Step'}/>
                 </div>
             </div>
         </>
