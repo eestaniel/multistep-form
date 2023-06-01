@@ -69,6 +69,7 @@
 }
 
 
+
 @media (min-width: 768px) {
     .footer {
         position: relative;
@@ -101,7 +102,7 @@
 
     .button__solo {
         position: relative;
-        left: 49.375rem;
+        left: 49.125rem;
         right: revert;
 
     }
