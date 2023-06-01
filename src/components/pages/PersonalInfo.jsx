@@ -2,14 +2,12 @@ import React from 'react';
 import Form from "../form/Form.jsx";
 import Validate from "../../utils/Validate.jsx";
 import { useStateContext } from "../../context/StateProvider.jsx";
-import './PersonalInfo.css'
+import './styles/PersonalInfo.css'
 
 const PersonalInfo = () => {
 
-    const [errors, setErrors] = React.useState({})
-    const { formValues, setFormValues } = useStateContext();
-    const {setFormPage} = useStateContext();
-
+    const { setFormValues } = useStateContext();
+    const { errors, setErrors } = useStateContext();
 
     const handleFocus = (e) => {
         e.preventDefault()
@@ -22,14 +20,7 @@ const PersonalInfo = () => {
         setErrors({...errors, [e.target.id]: inputErrors[e.target.id]})
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        let formErrors = Validate(formValues)
-        setErrors(formErrors)
-        if (Object.keys(formErrors).length === 0) {
-            setFormPage(2)
-        }
-    }
+
 
 
     return (
@@ -42,7 +33,6 @@ const PersonalInfo = () => {
                 setFormValues={setFormValues}
                 errors={errors}
             />
-            <button id="form__button" onClick={handleSubmit}>Next Step</button>
         </div>
     );
 };
