@@ -16,8 +16,9 @@
 }
 
 .summary__subheader {
-    font-size: 1.125rem;
-    color: hsl(230, 7%, 84%);
+    font-size: 1rem;
+    color: hsl(230, 3%, 60%);
+    font-weight: lighter;
 }
 
 .summary__content-container {
@@ -45,6 +46,7 @@
 
 .summary__content-price {
     font-size: 1.125rem;
+    font-family: Ubuntu-bold, sans-serif;
 }
 
 .summary_content__plan-group {
@@ -99,6 +101,7 @@ hr {
 .summary__content__total-price {
     color: hsl(244, 66%, 56%);
     font-size: 1.125rem;
+    font-family: Ubuntu-bold, sans-serif;
 }
 
 @media (min-width: 768px) {

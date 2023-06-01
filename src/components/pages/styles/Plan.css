@@ -17,8 +17,12 @@
 }
 
 .form__subheader {
-    font-size: 1.125rem;
-    color: hsl(230, 7%, 84%);
+    font-size: 1rem;
+    color: hsl(230, 3%, 60%);
+    font-family: Ubuntu-regular, sans-serif;
+    font-weight: lighter;
+    padding-right: 2rem;
+    margin-top: 0.5rem;
 }
 
 .form__group-plan {
@@ -70,6 +74,7 @@
     background-color: hsl(230, 75%, 98%);
     padding: .75rem;
     border-radius: .25rem;
+    font-family: Ubuntu-medium, sans-serif;
 }
 
 .form__plan__duration-group::before {
@@ -105,6 +110,10 @@
     .form__header {
         font-size: 2rem;
         color: hsl(213, 100%, 16%);
+    }
+
+    .form__subheader {
+        margin-top: 0;
     }
 
     .form__group-plan {

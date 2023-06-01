@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './styles/reset.css'
 import './styles/styles.css'
+import './styles/fonts.css'
 import Footer from "./components/ui/Footer.jsx";
 import {StateProvider} from './context/StateProvider.jsx'
 

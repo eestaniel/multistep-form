@@ -72,8 +72,8 @@
         border: none;
         background-color: transparent;
         color: hsl(248, 5%, 71%);
-        translate: 20.125rem;
-        font-size: 1.25rem;
+        translate: 20.875rem;
+        font-size: 1.125rem;
     }
 
     .form__plan__button-group button {
@@ -91,7 +91,7 @@
 
     .button__solo {
         position: relative;
-        left: 48rem;
+        left: 49.125rem;
         right: revert;
     }
 

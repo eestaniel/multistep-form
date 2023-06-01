@@ -118,6 +118,10 @@ ul, li {
         color: black;
     }
 
+    .form__navigation__list__item__paragraph {
+        font-family: Ubuntu-medium, sans-serif;
+    }
+
 
 }
 
