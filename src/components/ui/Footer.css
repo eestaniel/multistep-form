@@ -72,7 +72,7 @@
         border: none;
         background-color: transparent;
         color: hsl(248, 5%, 71%);
-        translate: 18.25rem;
+        translate: 20.125rem;
         font-size: 1.25rem;
     }
 
@@ -85,7 +85,8 @@
 
     #button__continue {
         border-radius: .5rem;
-        translate: -2.75rem
+        translate: -5.875rem;
+        width: 11vw;
     }
 
     .button__solo {
@@ -96,5 +97,11 @@
 
     .button__confirm {
         background-color: hsl(243, 100%, 62%) !important;
+        width: 10vw !important;
+        height: 5.5vh !important;
+    }
+
+    .button__confirm:hover {
+        background-color: hsl(244, 98%, 77%) !important;
     }
 }
