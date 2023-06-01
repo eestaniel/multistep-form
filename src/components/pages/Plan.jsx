@@ -1,7 +1,7 @@
 import React from 'react';
 import {useStateContext} from "../../context/StateProvider.jsx";
 import {ToggleSlider} from 'react-toggle-slider';
-import './Plan.css';
+import './styles/Plan.css';
 
 const Plan = () => {
     const {plan, setPlan} = useStateContext();
@@ -12,7 +12,6 @@ const Plan = () => {
 
     const handlePlanSelection = (e) => {
         e.preventDefault();
-        console.log(e.currentTarget.id)
         setSelectedPlan(e.currentTarget.id);
         // enable the plan that was clicked
         setPlan({

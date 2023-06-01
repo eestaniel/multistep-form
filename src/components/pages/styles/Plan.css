@@ -50,6 +50,7 @@
 
 .form__group-plan__item:hover {
     cursor: pointer;
+    border-color: hsl(244, 19%, 48%) !important;
 }
 
 .form__group-plan__item img {
