@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useStateContext} from "../../context/StateProvider.jsx";
 import DirectionButton from "../form/DirectionButton.jsx";
+import './styles/Summary.css'
 
 const Summary = () => {
     const {setFormPage} = useStateContext();
@@ -46,8 +47,6 @@ const Summary = () => {
     }
 
 
-
-
     /* On component load */
     React.useEffect(() => {
         doEnablePlan()
@@ -55,19 +54,20 @@ const Summary = () => {
     }, [total]);
 
 
-
-
     return (
         <div className={'summary-container'}>
             <h1 className="summary__header">Finishing up</h1>
             <h2 className="summary__subheader">Double-check everything looks OK before confirming.</h2>
 
-            <div className="summary__contenet-container">
+            <div className="summary__content-container">
                 <div className="summary_content__plan-group">
-                    <h4 className="summary__content-header">{enabledPlan.name} ({planDuration})</h4>
-                    <p className="summary__plan-change" onClick={handleChangePlan}>Change</p>
+                    <div className="summary__content-subgroup">
+                        <h4 className="summary__content-header">{enabledPlan.name} ({planDuration})</h4>
+                        <p className="summary__plan-change" onClick={handleChangePlan}>Change</p>
+                    </div>
+
                     <p className="summary__content-price">
-                        {enabledPlan.price}/{planDuration === 'monthly' ? 'mo' : 'yr'}
+                        ${enabledPlan.price}/{planDuration === 'monthly' ? 'mo' : 'yr'}
                     </p>
                 </div>
                 <hr/>
@@ -78,25 +78,21 @@ const Summary = () => {
                                 <div className="summary__content-addon" key={key}>
                                     <p className="summary__content-addon__name">{key}</p>
                                     <p className="summary__content-addon__price">
-                                        {value[planDuration]}/{planDuration === 'monthly' ? 'mo' : 'yr'}
+                                        ${value[planDuration]}/{planDuration === 'monthly' ? 'mo' : 'yr'}
                                     </p>
                                 </div>
                             )
                         }
                     })}
                 </div>
-
+            </div>
+            <div className="summary__total-container">
                 <div className="summary__content__total-group">
                     <p className="summary__content__total-text">Total (per month)</p>
                     <p className="summary__content__total-price">
                         +${total}/{planDuration === 'monthly' ? 'mo' : 'yr'}
                     </p>
                 </div>
-            </div>
-
-            <div className="form__plan__button-group">
-                <DirectionButton id={'go-back'} text={'Go Back'}/>
-                <button className="confirm" onClick={handleConfirm}>Confirm</button>
             </div>
 
         </div>
