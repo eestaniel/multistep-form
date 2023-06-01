@@ -5,13 +5,13 @@
     text-align: center;
     width: 92%;
     background-color: white;
-    transform: translateY(-4rem);
+    transform: translateY(-4.6355rem);
     border-radius: 0.5rem;
     padding: 4rem 1.425rem;
 }
 
 .complete__icon {
-    background-image: url("../../assets/images/icon-thank-you.svg");
+    background-image: url("../../../assets/images/icon-thank-you.svg");
     width: 3.625rem;
     background-repeat: no-repeat;
     aspect-ratio: 1 / 1;
@@ -27,4 +27,26 @@
 .complete-container p {
     font-size: 1.125rem;
     color: hsl(230, 3%, 61%);
+}
+
+@media (min-width: 768px) {
+    .complete-container {
+        transform: revert;
+        padding: 4rem 3rem;
+    }
+
+    .complete__icon {
+        width: 5rem;
+        margin: 0 auto 1.75rem auto;
+    }
+
+    .complete-container h1 {
+        font-size: 2.25rem;
+    }
+
+    .complete-container p {
+        font-size: 1.25rem;
+        color: hsl(230, 3%, 61%);
+    }
+
 }
