@@ -87,6 +87,7 @@
 }
 
 .form__plan__duration-group.yearly::after {
+    content: 'Yearly';
     color: hsl(216, 42%, 18%);
 }
 
