@@ -78,7 +78,7 @@ const Summary = () => {
                                 <div className="summary__content-addon" key={key}>
                                     <p className="summary__content-addon__name">{key}</p>
                                     <p className="summary__content-addon__price">
-                                        ${value[planDuration]}/{planDuration === 'monthly' ? 'mo' : 'yr'}
+                                        +${value[planDuration]}/{planDuration === 'monthly' ? 'mo' : 'yr'}
                                     </p>
                                 </div>
                             )
