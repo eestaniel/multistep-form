@@ -15,8 +15,8 @@
 }
 
 .form__plan__button-group button {
-    width: 25vw;
-    height: 5vh;
+    width: 94px;
+    height: 38px;
     display: grid;
     place-items: center;
 }
@@ -58,6 +58,16 @@
     display: none !important;
 }
 
+.button__confirm {
+    background-color: hsl(243, 100%, 62%) !important;
+    width: 96px !important;
+    height: 38px !important;
+}
+
+.button__confirm:hover {
+    background-color: hsl(244, 98%, 77%) !important;
+}
+
 
 @media (min-width: 768px) {
     .footer {
@@ -77,8 +87,8 @@
     }
 
     .form__plan__button-group button {
-        width: 14vw;
-        height: 6vh;
+        width: 124px !important;
+        height: 46px;
         display: grid;
         place-items: center;
     }
@@ -91,8 +101,9 @@
 
     .button__solo {
         position: relative;
-        left: 49.125rem;
+        left: 49.375rem;
         right: revert;
+
     }
 
     .button__confirm {
